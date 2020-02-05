@@ -1,0 +1,47 @@
+{
+  "name": "peltate-app",
+  "version": "0.1.0",
+  "contributors": [
+    "LeafCoders"
+  ],
+  "repository": "LeafCoders/peltate",
+  "scripts": {
+    "start": "gulp serve",
+    "build": "tsc && polymer build",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:integration": "tsc && mocha test/integration --timeout=10000 --require esm",
+    "test:unit": "tsc && polymer test --module-resolution=node --npm",
+    "replace:title": "replace '__paltate_title__' 'Peltate Application' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:description": "replace '__paltate_description__' 'Article browser' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:shortname": "replace '__paltate_shortname__' 'Peltate App' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:starturl": "replace '__paltate_starturl__' 'https://domain.com/subpath' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:basepath": "replace '__paltate_basepath__' 'subpath' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:themecolor": "replace '#3f51b5' '#ff0000' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:rosetteserver": "replace 'http://localhost:9000' 'https://rosette.domain.com' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:headerimage": "replace 'image-templates/peltate-header-400x44.png' 'https://rosette.domain.com/header-image.jpg' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:defaultarticleimage": "replace 'image-templates/peltate-article-1080.png' 'https://rosette.domain.com/article-image.jpg' . -r --include='*.ts,*.json' --exclude='package.json,node_modules,build,test'",
+    "replace:all": "npm run replace:title && npm run replace:description && npm run replace:shortname && npm run replace:starturl && npm run replace:themecolor && npm run replace:basepath && npm run replace:rosetteserver && npm run replace:headerimage && npm run replace:defaultarticleimage",
+    "generate:images": "cd image-generator && npm install && npm run generate && cd .."
+  },
+  "dependencies": {
+    "@polymer/app-layout": "^3.0.0",
+    "@polymer/polymer": "^3.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.4",
+    "lit-element": "^2.0.1",
+    "pwa-helpers": "^0.9.0"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "axe-core": "^3.0.0",
+    "chai": "^4.1.2",
+    "chai-string": "^1.5.0",
+    "del": "^3.0.0",
+    "esm": "^3.2.25",
+    "gulp": "^4.0.0",
+    "mocha": "^5.2.0",
+    "polymer-cli": "^1.9.11",
+    "replace": "^1.1.5",
+    "typescript": "^3.1.3",
+    "wct-mocha": "^1.0.0"
+  }
+}

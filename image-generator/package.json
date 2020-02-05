@@ -1,0 +1,15 @@
+{
+  "name": "peltate-image-generator",
+  "version": "0.1.0",
+  "contributors": [
+    "LeafCoders"
+  ],
+  "repository": "LeafCoders/peltate",
+  "scripts": {
+    "generate": "pwa-asset-generator ../image-templates/peltate-pwa-512.png ../images -p '15%' -b 'white' --favicon"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "pwa-asset-generator": "^2.1.3"
+  }
+}
